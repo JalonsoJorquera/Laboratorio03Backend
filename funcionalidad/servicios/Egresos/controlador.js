@@ -1,8 +1,8 @@
 const logicaDB = require('./logicaDB');
 
-const obtenerRegistroEgreso = async (req,res) =>{
+const obtenerEgreso = async (req,res) =>{
     try {
-        let respuesta = await logicaDB.obtenerRegistroEgresoDB();
+        let respuesta = await logicaDB.obtenerEgresoDB();
         res.status(200).json({
             'egresos': respuesta
         });
@@ -14,10 +14,10 @@ const obtenerRegistroEgreso = async (req,res) =>{
         return;
     }
 }
-const crearRegistroEgreso = async (req,res) =>{
-    let registroEgreso = req.body;
+const crearEgreso = async (req,res) =>{
+    let Egreso = req.body;
     try {
-        let respuesta = await logicaDB.crearRegistroEgresoDB(registroEgreso);
+        let respuesta = await logicaDB.crearEgresoDB(Egreso);
         res.status(200).json({
             'egreso': respuesta
         });
@@ -31,6 +31,6 @@ const crearRegistroEgreso = async (req,res) =>{
 }
 
 module.exports = {
-    crearRegistroEgreso,
-    obtenerRegistroEgreso,
+    crearEgreso,
+    obtenerEgreso,
 }

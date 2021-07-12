@@ -19,10 +19,10 @@ db.once('open', function() {
   console.log("Conectado a la DB")
 });
 
-const registroUsuario = require('./funcionalidad/rutas/registroUsuario');
+const Usuario = require('./funcionalidad/rutas/Usuario');
 
 
-router.use('/registroUsuario',registroUsuario);
+router.use('/Usuario',Usuario);
 
 router.get('/', (req, res) => {
   res.send('Hello World!')

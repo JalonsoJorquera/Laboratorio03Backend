@@ -1,8 +1,8 @@
 const logicaDB = require('./logicaDB');
 
-const obtenerRegistroUsuario = async (req,res) =>{
+const obtenerUsuario = async (req,res) =>{
     try {
-        let respuesta = await logicaDB.obtenerRegistroUsuarioDB();
+        let respuesta = await logicaDB.obtenerUsuarioDB();
         res.status(200).json({
             'usuarios': respuesta
         });
@@ -15,10 +15,10 @@ const obtenerRegistroUsuario = async (req,res) =>{
     }
 }
 
-const crearRegistroUsuario = async (req,res) =>{
-    let registroUsuario = req.body;
+const crearUsuario = async (req,res) =>{
+    let Usuario = req.body;
     try {
-        let respuesta = await logicaDB.crearRegistroUsuarioDB(registroUsuario);
+        let respuesta = await logicaDB.crearUsuarioDB(Usuario);
         res.status(200).json({
             'usuario': respuesta
         });
@@ -32,7 +32,7 @@ const crearRegistroUsuario = async (req,res) =>{
 }
 
 module.exports = {
-    crearRegistroUsuario,
-    obtenerRegistroUsuario,
+    crearUsuario,
+    obtenerUsuario,
     
 }

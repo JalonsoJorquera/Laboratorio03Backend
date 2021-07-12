@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose; 
 
-const RegistroForm = new Schema({
+const Egreso = new Schema({
     descripcion:String,
     precio: Number,
     id_usuario: {
@@ -11,4 +11,4 @@ const RegistroForm = new Schema({
     }
 });
 
-module.exports = mongoose.model('RegistroEgreso',RegistroEgreso)
+module.exports = mongoose.model('Egreso',Egreso)
