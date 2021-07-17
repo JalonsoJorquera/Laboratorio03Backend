@@ -15,9 +15,9 @@ const obtenerEgreso = async (req,res) =>{
     }
 }
 const crearEgreso = async (req,res) =>{
-    let Egreso = req.body;
+    let egreso = req.body;
     try {
-        let respuesta = await logicaDB.crearEgresoDB(Egreso);
+        let respuesta = await logicaDB.crearEgresoDB(egreso);
         res.status(200).json({
             'egreso': respuesta
         });

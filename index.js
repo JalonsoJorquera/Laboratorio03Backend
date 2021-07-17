@@ -24,6 +24,10 @@ const Usuario = require('./funcionalidad/rutas/Usuario');
 
 router.use('/Usuario',Usuario);
 
+const Egreso = require('./funcionalidad/rutas/Egreso');
+
+router.use('/Egreso',Egreso);
+
 router.get('/', (req, res) => {
   res.send('Hello World!')
 })

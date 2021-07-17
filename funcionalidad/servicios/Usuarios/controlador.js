@@ -16,9 +16,26 @@ const obtenerUsuario = async (req,res) =>{
 }
 
 const crearUsuario = async (req,res) =>{
-    let Usuario = req.body;
+    let usuario = req.body;
     try {
-        let respuesta = await logicaDB.crearUsuarioDB(Usuario);
+        let respuesta = await logicaDB.crearUsuarioDB(usuario);
+        res.status(200).json({
+            'usuario': respuesta
+        });
+        return;
+    } catch (error) {
+        res.status(500).json({
+            error
+        });
+        return;
+    }
+}
+
+
+const idUsuario = async (req,res) =>{
+    let idusuario = req.param.id;
+    try {
+        let respuesta = await logicaDB.ObtenerIdUsuarioDB(idusuario,);
         res.status(200).json({
             'usuario': respuesta
         });

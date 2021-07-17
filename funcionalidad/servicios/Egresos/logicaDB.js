@@ -1,7 +1,7 @@
 const Egreso = require('./Egreso.model');
 
-const crearEgresoDB = async (Egreso) => {
-    let respuesta = await Egreso.create(Egreso);
+const crearEgresoDB = async (egreso) => {
+    let respuesta = await Egreso.create(egreso);
     return respuesta;
 }
 
