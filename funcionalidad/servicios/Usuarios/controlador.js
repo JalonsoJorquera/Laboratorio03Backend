@@ -32,10 +32,10 @@ const crearUsuario = async (req,res) =>{
 }
 
 
-const idUsuario = async (req,res) =>{
-    let idusuario = req.param.id;
+const obtenerIdUsuario = async (req,res) =>{
+    let id = req.params.id;
     try {
-        let respuesta = await logicaDB.ObtenerIdUsuarioDB(idusuario,);
+        let respuesta = await logicaDB.ObtenerIdUsuarioDB(id);
         res.status(200).json({
             'usuario': respuesta
         });
@@ -51,5 +51,6 @@ const idUsuario = async (req,res) =>{
 module.exports = {
     crearUsuario,
     obtenerUsuario,
+    obtenerIdUsuario,
     
 }

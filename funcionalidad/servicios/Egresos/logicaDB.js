@@ -10,7 +10,13 @@ const obtenerEgresoDB = async () => {
     return respuesta;
 }
 
+const ObtenerEgresoUsuarioDB = async (id) => {
+    let respuesta = await Egreso.findById(id_usuario);
+    return respuesta;
+}
+
 module.exports = {
     crearEgresoDB,
     obtenerEgresoDB,
+    ObtenerEgresoUsuarioDB,
 }

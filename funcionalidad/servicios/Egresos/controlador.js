@@ -30,7 +30,24 @@ const crearEgreso = async (req,res) =>{
     }
 }
 
+const obtenerEgresoUsuario = async (req,res) =>{
+    let id = req.params.id;
+    try {
+        let respuesta = await logicaDB.ObtenerEgresoUsuarioDB(id);
+        res.status(200).json({
+            'egresos_usuario': respuesta
+        });
+        return;
+    } catch (error) {
+        res.status(500).json({
+            error
+        });
+        return;
+    }
+}
+
 module.exports = {
     crearEgreso,
     obtenerEgreso,
+    obtenerEgresoUsuario,
 }

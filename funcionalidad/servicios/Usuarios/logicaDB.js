@@ -10,12 +10,13 @@ const obtenerUsuarioDB = async () => {
     return respuesta;
 }
 
-const obtenerIdUsuarioDB = async () => {
-    let respuesta = await Usuario.find(idUsuario);
+const obtenerIdUsuarioDB = async (id) => {
+    let respuesta = await Usuario.findById(id_usuario);
     return respuesta;
 }
 
 module.exports = {
     crearUsuarioDB,
     obtenerUsuarioDB,
+    obtenerIdUsuarioDB,
 }
