@@ -11,7 +11,7 @@ const obtenerUsuarioDB = async () => {
 }
 
 const obtenerIdUsuarioDB = async (id) => {
-    let respuesta = await Usuario.findById(id_usuario);
+    let respuesta = await Usuario.findById({_id});
     return respuesta;
 }
 
